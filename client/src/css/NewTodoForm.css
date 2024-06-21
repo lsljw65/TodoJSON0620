@@ -1,0 +1,11 @@
+.newform {
+  background-color: aliceblue;
+  padding: 10px;
+}
+.input {
+  padding: 10px;
+  border: 2px solid #eeeeee;
+}
+.bt {
+  margin: 0 10px;
+}
