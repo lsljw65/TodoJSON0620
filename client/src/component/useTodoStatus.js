@@ -1,9 +1,5 @@
-import "./App.css";
-import React, { useState } from "react";
-import TodoList from "./component/TodoList";
-import NewTodoForm from "./component/NewTodoForm";
-
-function useTodoStatus() {
+import { useState } from "react";
+export default function useTodoStatus() {
   const [todos, setTodos] = useState([]);
   const [lastTodoId, setLastTodoId] = useState(0);
 
@@ -36,17 +32,3 @@ function useTodoStatus() {
     modifyTodo,
   };
 }
-
-function App() {
-  const todoStatus = useTodoStatus();
-  return (
-    <div className="App">
-      <h1>Todos</h1>
-      <NewTodoForm todoStatus={todoStatus} />
-      <hr />
-      <TodoList todoStatus={todoStatus} />
-    </div>
-  );
-}
-
-export default App;

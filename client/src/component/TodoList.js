@@ -1,14 +1,9 @@
 import TodoListItem from "./TodoListItem";
-export default function TodoList({ todos, removeTodo, modifyTodo }) {
+export default function TodoList({ todoStatus }) {
   return (
     <ul>
-      {todos.map((todo) => (
-        <TodoListItem
-          key={todo.id}
-          todo={todo}
-          removeTodo={removeTodo}
-          modifyTodo={modifyTodo}
-        />
+      {todoStatus.todos.map((todo) => (
+        <TodoListItem key={todo.id} todo={todo} todoStatus={todoStatus} />
       ))}
     </ul>
   );

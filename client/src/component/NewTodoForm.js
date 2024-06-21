@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "../css/NewTodoForm.css";
-export default function NewTodoForm({ addTodo: _addTodo }) {
+export default function NewTodoForm({ todoStatus }) {
   const [newTodoTitle, setNewTodoTitle] = useState("");
 
   function onChange(e) {
@@ -12,7 +12,7 @@ export default function NewTodoForm({ addTodo: _addTodo }) {
     if (newTodoTitle.trim().length === 0) return;
 
     const title = newTodoTitle.trim();
-    _addTodo(title);
+    todoStatus.addTodo(title);
     setNewTodoTitle("");
   }
 

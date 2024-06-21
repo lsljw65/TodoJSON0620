@@ -1,15 +1,11 @@
 import { useState } from "react";
 import "../css/Item.css";
-export default function TodoListItem({
-  todo,
-  removeTodo: _removeTodo,
-  modifyTodo: _modifyTodo,
-}) {
+export default function TodoListItem({ todo, todoStatus }) {
   const [editMode, setEditMode] = useState(false);
   const [newEditTitle, setNewEditTitle] = useState(todo.title);
   const readMode = !editMode;
   function removeTodo() {
-    _removeTodo(todo.id);
+    todoStatus.removeTodo(todo.id);
   }
 
   function enableEditTodo() {
@@ -19,7 +15,7 @@ export default function TodoListItem({
   function commitEdit() {
     if (newEditTitle.trim().length === 0) return;
 
-    _modifyTodo(todo.id, newEditTitle.trim());
+    todoStatus.modifyTodo(todo.id, newEditTitle.trim());
     setEditMode(false);
   }
   function cancelEdit() {
